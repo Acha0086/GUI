@@ -35,8 +35,6 @@ namespace WindowsFormsApp1
             label16.Hide();
             listBox3.Hide();
             label17.Hide();
-            button69.Hide();
-            buttonOutput.Hide();
         }
         private void button_Click(object sender, EventArgs e)
         {
@@ -161,7 +159,7 @@ namespace WindowsFormsApp1
                 all_buttons[i].BackColor = Color.White;
             }
 
-            var lines = File.ReadLines(@"A:\Documents\DLCT\test2.csv");
+            var lines = File.ReadLines(@"A:\Documents\DLCT\test1.csv");
             foreach (string line in lines)
             {
                 var sub_array = line.Split(',');

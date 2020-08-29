@@ -281,7 +281,7 @@ class Lessons:
 
 
     def output(self, output_file_name):
-        file = open(output_file_name, "w")
+        file = open("A:/Documents/DLCT/" + output_file_name, "w")
 
         for i in range(len(self.workshop_list_final)):
             class_name_and_instance = re.findall(r'([A-Z][0-9]?)[ ]*([0-9])?', self.workshop_list_final[i][0])
