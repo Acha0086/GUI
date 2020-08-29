@@ -8,28 +8,27 @@ def algorithm(classes):
     unavail_final = []
     for i in range(len(classes)):
 
-        # Situation 1
+        # Situation 1 Irrespective of preferences
         if len(classes[i][3]) == number_of_students:
             good_classes.append(classes[i])
 
-        # Situation 3
-        if len(classes[i][3]) > number_of_students:
-            return False
+        # Situation 3 Only One student is available for a class
+        if len(classes[i][3]) == 1:
+            print("Cannot be done, not enough friends! :(")
 
-        # Situation 4
+        # Situation 4 Most preferred class
         preferred_no = max(len(classes[i][3]))
         for j in range(len(classes)):
             if preferred_no == len(classes[i][3]):
                 good_classes.append(classes[i])
 
-        # Situation 5
+        # Situation 5 If a student is unavailable for everything
         if classes[i][5] is not None:
             unavailable.extend(classes[i][5])
-        unavailable.sort()
         student = input.lesson1.names_list
-        for i in range(len(student)):
-            if unavailable.count(student[i]) == len(classes):
-                unavail_final.append(student[i])  # Students who can't do anything
+        for j in range(len(student)):
+            if unavailable.count(student[j]) == len(classes):
+                unavail_final.append(student[j])  # Students who can't do anything
 
         # Splitting groups
 
