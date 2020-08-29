@@ -17,3 +17,22 @@ C:\Users\Allan Chan\source\repos\GUI\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.As
 C:\Users\Allan Chan\source\repos\GUI\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Allan Chan\source\repos\GUI\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Allan Chan\source\repos\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\CsvHelper.dll
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\CsvHelper.xml
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+A:\Documents\DLCT\GUI\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+A:\Documents\DLCT\GUI\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
