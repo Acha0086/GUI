@@ -34,7 +34,7 @@ class Lessons:
         for i in range(len(self.class_table)):
             if self.class_table[i][0][0] == 'L':
                 self.lecture_list_setup.append(self.class_table[i])
-    # TODO: Change tuple of time to normal list elements AT THE END
+    
     # [class_type/name/number, day, times, [available students], [unavailable students], [students who don’t prefer it]]
     def workshop(self):
         for i in range(len(self.workshop_list_setup)):
@@ -48,6 +48,11 @@ class Lessons:
             single_w.append([])
             self.workshop_list_final.append(single_w)
             self.__availability(self.workshop_list_final[i][1], self.workshop_list_final[i][2], i, 'W')
+            listtime = []
+            for j in range(len(time[0])):
+                listtime.append(time[0][j])
+            self.workshop_list_final[i][2] = listtime
+
 
     def tutorial(self):
         for i in range(len(self.tutorial_list_setup)):
@@ -61,6 +66,10 @@ class Lessons:
             single_t.append([])
             self.tutorial_list_final.append(single_t)
             self.__availability(self.tutorial_list_final[i][1], self.tutorial_list_final[i][2], i, 'T')
+            listtime = []
+            for j in range(len(time[0])):
+                listtime.append(time[0][j])
+            self.tutorial_list_final[i][2] = listtime
 
     def lecture(self):
         for i in range(len(self.lecture_list_setup)):
@@ -74,6 +83,10 @@ class Lessons:
             single_l.append([])
             self.lecture_list_final.append(single_l)
             self.__availability(self.lecture_list_final[i][1], self.lecture_list_final[i][2], i, 'L')
+            listtime = []
+            for j in range(len(time[0])):
+                listtime.append(time[0][j])
+            self.lecture_list_final[i][2] = listtime
 
 
 
