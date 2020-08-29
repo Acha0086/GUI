@@ -1,3 +1,5 @@
+import string
+
 
 # students saved as (student_name, list of lists)
 def input(Student, Units, Unit_name):
@@ -24,10 +26,13 @@ def input(Student, Units, Unit_name):
             full_class_list.append(single_class_list)
             single_class_list_counter = 0
             single_class_list = []
-        single_class_list.append(word)
+        # strips punctuation and \n
+        single_class_list.append(word.translate(str.maketrans('', '', string.punctuation)).strip())
         single_class_list_counter += 1
     full_class_list.append(single_class_list)
-    return full_class_list
+
+    # turn student input into python readable list of lists
+
 
 
 print(input('asda', 'Class input.csv', 'FIT2014'))
