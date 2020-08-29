@@ -72,6 +72,9 @@ if __name__ == '__main__':
     student_table = student_input('test student.csv')
     print(student_table)
     lesson1 = lesson.Lessons(class_table, student_table)
+    lesson1.set_up()
+    lesson1.workshop()
+    print(lesson1.workshop_list_final)
 
 
 
