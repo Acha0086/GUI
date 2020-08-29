@@ -41,26 +41,23 @@ def algorithm(classes):
         return good_classes
 
 
-    # Situation 5 If a student is unavailable for everything
-    if classes[i][5] is not None:
-        unavailable.extend(classes[i][5])
-    student = input.lesson1.names_list
-    for j in range(len(student)):
-        if unavailable.count(student[j]) == len(classes):
-            unavail_final.append(student[j])  # Students who can't do anything
-
     # Splitting groups
     combos = [[]]
     for item in student:
         new_combos = [subset + [item] for subset in combos]
         combos.extend(new_combos)
 
-
-
+        # Situation 5 If a student is unavailable for everything
+        if classes[i][5] is not None:
+            unavailable.extend(classes[i][5])
+        student = input.lesson1.names_list
+        for j in range(len(student)):
+            if unavailable.count(student[j]) == len(classes):
+                unavail_final.append(student[j])  # Students who can't do anything
 
 
 # available, not preferred, unavailable
-classes1 = [['W1', 'Mon', '8 - 9', ['Bob', 'John'], [], []]]
+#classes1 = [['W1', 'Mon', '8 - 9', ['Bob', 'John'], [], []]]
 
 
 # currently = [[w1 1], [w1 2], [t1], [t2], [l1], [w2 1]]
