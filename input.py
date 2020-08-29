@@ -1,4 +1,4 @@
-import string, algorithm,
+import string, algorithm, lesson
 
 
 def class_input(Units, Unit_name):
@@ -67,11 +67,11 @@ def student_input(Students):
 
 
 if __name__ == '__main__':
-    print(class_input('Class input.csv', 'FIT2014'))
-    a, b = student_input('test student.csv')
-
-    print(a)
-    print(b)
+    class_table = class_input('Class input.csv', 'FIT2014')
+    print(class_table)
+    student_table = student_input('test student.csv')
+    print(student_table)
+    lesson1 = lesson.Lessons(class_table, student_table)
 
 
 
