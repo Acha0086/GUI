@@ -1,5 +1,6 @@
 import input, re
 
+# Order is setup then main_run then output(file_name)
 
 class Lessons:
 
@@ -19,6 +20,14 @@ class Lessons:
         self.__workshop_setup()
         self.__tutorial_setup()
         self.__lecture_setup()
+
+    def main_run(self):
+        self.workshop()
+        self.tutorial()
+        self.lecture()
+        self.algorithm('W')
+        self.algorithm('T')
+        self.algorithm('L')
 
     def __workshop_setup(self):
         for i in range(len(self.class_table)):
@@ -148,8 +157,91 @@ class Lessons:
                     self.lecture_list_final[index][4].append(self.names_list[i])
                 else:
                     self.lecture_list_final[index][3].append(self.names_list[i])
-    
 
+    def algorithm(self, lesson_type):
+        if lesson_type == "T":
+            classes = self.tutorial_list_final
+
+        if lesson_type == "W":
+            classes = self.workshop_list_final
+
+        if lesson_type == "L":
+            classes = self.lecture_list_final
+
+        good_classes = []
+
+        # good_classes_limit
+        if len(classes) <= 4:
+            good_classes_limit = 4
+        else:
+            good_classes_limit = max(len(classes) // 2, 4)
+
+        # Looking at all classes that everyone can do and ranking based on how many don't not prefer it
+        potential_good_classes = []
+        for i in range(len(classes)):
+            if len(classes[i][5]) > 0:
+                continue
+            else:
+                ranking_score = 0
+                ranking_score += len(classes[i][4]) * 0.75
+                ranking_score += len(classes[i][3])
+                # ranking_score + 0.00(i)
+                potential_good_classes.append(ranking_score + (i + 1) * 0.001)
+
+        if len(potential_good_classes) <= good_classes_limit:
+            for i in range(len(potential_good_classes)):
+                if potential_good_classes[i] > 10:
+                    index = int(str(potential_good_classes[i])[5]) - 1
+                else:
+                    index = int(str(potential_good_classes[i])[4]) - 1
+                good_classes.append(classes[index])
+        else:
+            potential_good_classes.sort()
+            for i in range(good_classes_limit):
+                if potential_good_classes[i] > 10:
+                    index = int(str(potential_good_classes[i])[5]) - 1
+                else:
+                    index = int(str(potential_good_classes[i])[4]) - 1
+                good_classes.append(classes[index])
+
+        if len(good_classes) >= good_classes_limit:
+            return good_classes
+
+        # not everyone is in the class
+        potential_alright_classes = []
+        for i in range(len(classes)):
+            if len(classes[i][3]) == 0:
+                continue
+            else:
+                ranking_score = 0
+                ranking_score += len(classes[i][4]) * 0.75
+                ranking_score += len(classes[i][3])
+                # ranking_score + 0.00(i)
+                potential_alright_classes.append(ranking_score + (i + 1) * 0.001)
+
+        if len(potential_alright_classes) <= (good_classes_limit - len(good_classes)):
+            for i in range(len(potential_alright_classes)):
+                if potential_alright_classes[i] > 10:
+                    index = int(str(potential_alright_classes[i])[5]) - 1
+                else:
+                    index = int(str(potential_alright_classes[i])[4]) - 1
+                good_classes.append(classes[index])
+        else:
+            potential_alright_classes.sort()
+            for i in range(good_classes_limit - len(good_classes)):
+                if potential_alright_classes[i] > 10:
+                    index = int(str(potential_alright_classes[i])[5]) - 1
+                else:
+                    index = int(str(potential_alright_classes[i])[4]) - 1
+                good_classes.append(classes[index])
+        if lesson_type == "T":
+            self.tutorial_list_final= good_classes
+
+        if lesson_type == "W":
+            self.workshop_list_final = good_classes
+
+        if lesson_type == "L":
+            self.lecture_list_final = good_classes
 
 
     def output(self, output_file_name):
@@ -207,7 +299,6 @@ class Lessons:
 
             for j in range(len(self.lecture_list_final[i][5])):
                 output_str = output_str + ',' + self.lecture_list_final[i][5][j]
-            
 
             output_str += '\n'
             file.write(output_str)

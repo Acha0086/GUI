@@ -1,7 +1,14 @@
 import string, algorithm, lesson
 
 
-def class_input(Units, Unit_name):
+def class_input(Units, Students):
+    # finding the unit_code
+    file = open(str(Students), "r", encoding="UTF-8-sig")
+    for line in file:
+        line = line.split(',')
+        Unit_name = line[1]
+        break
+
     # Input is csv file of units (see 'class input.csv' for example), and the name of the unit the student wants
     row_num = 0
     file = open(str(Units), "r", encoding="UTF-8-sig")
@@ -67,23 +74,12 @@ def student_input(Students):
 
 
 if __name__ == '__main__':
-    class_table = class_input('Class input.csv', 'FIT2014')
-    print(class_table)
+    class_table = class_input('Class input.csv', 'test student.csv')
     student_table = student_input('test student.csv')
-    print(student_table)
     lesson1 = lesson.Lessons(class_table, student_table)
     lesson1.set_up()
-    lesson1.workshop()
-    lesson1.tutorial()
-    lesson1.lecture()
-    print('workshop final')
-    print(lesson1.workshop_list_final)
-    print('tutorial final')
-    print(lesson1.tutorial_list_final)
-    print('lecture final')
-    print(lesson1.lecture_list_final)
-    lesson1.output('output_file.csv')
-
+    lesson1.main_run()
+    lesson1.output('test1.csv')
 
 
 
