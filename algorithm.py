@@ -31,6 +31,11 @@ def algorithm(classes):
                 unavail_final.append(student[j])  # Students who can't do anything
 
         # Splitting groups
+        combos = [[]]
+        for item in student:
+            new_combos = [subset + [item] for subset in combos]
+            combos.extend(new_combos)
+
 
 
 
