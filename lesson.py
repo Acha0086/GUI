@@ -1,4 +1,4 @@
-import input
+import input, re
 
 
 class Lessons:
@@ -6,11 +6,14 @@ class Lessons:
     def __init__(self, class_table, student_table):
         self.class_table = class_table
         self.number_of_students = len(student_table[0])
-        self.workshop_list = []
-        self.tutorial_list = []
-        self.lecture_list = []
+        self.workshop_list_setup = []
+        self.tutorial_list_setup = []
+        self.lecture_list_setup = []
         self.names_list = student_table[0]
         self.input_availability = student_table[1]
+        self.workshop_list_final = []
+        self.tutorial_list_final = []
+        self.lecture_list_final = []
 
     def set_up(self):
         self.__workshop_setup()
@@ -20,33 +23,56 @@ class Lessons:
     def __workshop_setup(self):
         for i in range(len(self.class_table)):
             if self.class_table[i][0][0] == 'W':
-                self.workshop_list.append(self.class_table[i])
+                self.workshop_list_setup.append(self.class_table[i])
 
     def __tutorial_setup(self):
         for i in range(len(self.class_table)):
             if self.class_table[i][0][0] == 'T':
-                self.tutorial_list.append(self.class_table[i])
+                self.tutorial_list_setup.append(self.class_table[i])
 
     def __lecture_setup(self):
         for i in range(len(self.class_table)):
             if self.class_table[i][0][0] == 'L':
-                self.lecture_list.append(self.class_table[i])
+                self.lecture_list_setup.append(self.class_table[i])
 
+    # [class_type/name/number, day, times, [available students], [unavailable students], [students who don’t prefer it]]
     def workshop(self):
-        for i in range(len(self.workshop_list)):
-            pass
+        for i in range(len(self.workshop_list_setup)):
+            single_w = []
+            single_w.append(self.workshop_list_setup[i][0])
+            single_w.append(self.workshop_list_setup[i][1])
+            time = re.findall(r'([0-9][0-9]?)[ ]*([0-9][0-9]?)', self.workshop_list_setup[i][2])
+            single_w.append(time[0])
+            self.workshop_list_final.append(single_w)
+
+    def availability(self, day, time):
+        """
+        Time should be in a tuple (start, end)
+        """
+        # gets the column
+        if day == 'Mon':
+            column = 0
+        elif day == 'Tue':
+            column = 1
+        elif day == 'Wed':
+            column = 2
+        elif day == 'Thu':
+            column = 3
+        elif day == 'Fri':
+            column = 4
+
+        # gets the row
+        rows = []
+        start_time = time[0]
+        end_time = time[1]
+        number_of_rows = int(end_time) - int(start_time)
+        for i in range(number_of_rows):
+            rows.append(int(start_time) - 8 + i)
+        for i in range(len(self.input_availability)):
 
 
 
 
 
-def class_design(student_names, student_avail, class_times):
-    times = ['8  9', '9  10', '10  11', '11  12', '12  13', '13  14', '14  15', '']
-    all_classes = []
-    single_class = []
-    for instance in class_times:
-        single_class.append(instance[0])
-        single_class.append(instance[1])
-        single_class.append(instance[2])
 
 
