@@ -55,10 +55,7 @@ def student_input(Students):
 
                 break
 
-            if int(word) == 0:
-                single_student_hour.append(None)
-            else:
-                single_student_hour.append(word.strip())
+            single_student_hour.append(word.strip())
         if len(single_student_hour) == 5:
             single_student_table.append(single_student_hour)
             single_student_hour = []
@@ -70,9 +67,10 @@ def student_input(Students):
 
 
 if __name__ == '__main__':
-    # print(class_input('Class input.csv', 'FIT2014'))
-    print(student_input('test student.csv'))
-    # print(a)
+    print(class_input('Class input.csv', 'FIT2014'))
+    a, b = student_input('test student.csv')
+    print(a)
+    print(b)
 
 
 
