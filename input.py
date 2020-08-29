@@ -75,6 +75,8 @@ if __name__ == '__main__':
     lesson1.set_up()
     lesson1.workshop()
     print(lesson1.workshop_list_final)
+    lesson1.availability('Tue', '13  14')
+    print(lesson1.workshop_list_final)
 
 
 
