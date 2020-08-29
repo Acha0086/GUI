@@ -1,5 +1,6 @@
 import string
 
+
 def class_input(Units, Unit_name):
     # Input is csv file of units (see 'class input.csv' for example), and the name of the unit the student wants
     row_num = 0
@@ -40,7 +41,7 @@ def student_input(Students):
     single_student_table = []
     student_names = []
     file = open(str(Students), "r", encoding="UTF-8-sig")
-    
+
     for line in file:
         line = line.split(',')
         for word in line:
@@ -54,24 +55,24 @@ def student_input(Students):
 
                 break
 
-        single_student_hour.append(word.strip())
+            if int(word) == 0:
+                single_student_hour.append(None)
+            else:
+                single_student_hour.append(word.strip())
         if len(single_student_hour) == 5:
             single_student_table.append(single_student_hour)
             single_student_hour = []
     student_table.append(single_student_table)
     file.close()
-    # 0 = Unavailable, 1 = Not preferred, 2 = Available
+    # None = Available, 1 = Unavailable, 2 = Not preferred
     # Outputs in format of (list of student names, [[[student 1 availibilities 8-9], [student 1 availabilies 9-10]], [[student 2 availabilities 8-9],[student 2 availabilities 9-10]])
     return student_names, student_table
 
 
-
 if __name__ == '__main__':
-    print(class_input('Class input.csv', 'FIT2014'))
-    a, b = student_input('test student.csv')
-    print(a)
-    print(b)
-
+    # print(class_input('Class input.csv', 'FIT2014'))
+    print(student_input('test student.csv'))
+    # print(a)
 
 
 
