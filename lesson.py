@@ -243,9 +243,9 @@ class Lessons:
                     if i != j:
                         if self.tutorial_list_final[i][2] == self.tutorial_list_final[j][2]:
                             if i > j:
-                                del self.workshop_list_final[i]
+                                del self.tutorial_list_final[i]
                             else:
-                                del self.workshop_list_final[j]
+                                del self.tutorial_list_final[j]
                     j += 1
                 i += 1
 
@@ -273,9 +273,9 @@ class Lessons:
                     if i != j:
                         if self.lecture_list_final[i][2] == self.lecture_list_final[j][2]:
                             if i > j:
-                                del self.workshop_list_final[i]
+                                del self.lecture_list_final[i]
                             else:
-                                del self.workshop_list_final[j]
+                                del self.lecture_list_final[j]
                     j += 1
                 i += 1
 
