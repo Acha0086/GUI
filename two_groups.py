@@ -1,6 +1,4 @@
 def find_good_sessions_for_group(students, lesson_type)
-
-	#
 	good_list = []
 
 	available = []
