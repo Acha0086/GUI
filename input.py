@@ -1,4 +1,4 @@
-import string
+import string, algorithm,
 
 
 def class_input(Units, Unit_name):
@@ -69,6 +69,7 @@ def student_input(Students):
 if __name__ == '__main__':
     print(class_input('Class input.csv', 'FIT2014'))
     a, b = student_input('test student.csv')
+
     print(a)
     print(b)
 
