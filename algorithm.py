@@ -5,6 +5,7 @@ def algorithm(classes):
     number_of_students = len(classes[0][3]) + len(classes[0][4]) + len(classes[0][5])
     good_classes = []
     unavailable = []
+    unavail_final = []
     for i in range(len(classes)):
 
         # Situation 1
@@ -22,7 +23,6 @@ def algorithm(classes):
                 good_classes.append(classes[i])
 
         # Situation 5
-        unavail_final = []
         if classes[i][5] is not None:
             unavailable.extend(classes[i][5])
         unavailable.sort()
