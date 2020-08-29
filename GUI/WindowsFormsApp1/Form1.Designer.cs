@@ -271,7 +271,6 @@
             // 
             this.button70.BackColor = System.Drawing.Color.White;
             this.button70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button70.Enabled = false;
             this.button70.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button70.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button70.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -287,7 +286,6 @@
             // 
             this.button71.BackColor = System.Drawing.Color.Yellow;
             this.button71.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button71.Enabled = false;
             this.button71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button71.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button71.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -303,7 +301,6 @@
             // 
             this.button72.BackColor = System.Drawing.Color.Red;
             this.button72.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button72.Enabled = false;
             this.button72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button72.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button72.ForeColor = System.Drawing.SystemColors.ControlText;

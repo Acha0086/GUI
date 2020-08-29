@@ -35,6 +35,8 @@ namespace WindowsFormsApp1
             label16.Hide();
             listBox3.Hide();
             label17.Hide();
+            button69.Hide();
+            buttonOutput.Hide();
         }
         private void button_Click(object sender, EventArgs e)
         {
