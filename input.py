@@ -54,16 +54,13 @@ def student_input(Students):
 
                 break
 
-            if int(word) == 0:
-                single_student_hour.append(None)
-            else:
-                single_student_hour.append(word.strip())
+        single_student_hour.append(word.strip())
         if len(single_student_hour) == 5:
             single_student_table.append(single_student_hour)
             single_student_hour = []
     student_table.append(single_student_table)
     file.close()
-    # None = Available, 1 = Unavailable, 2 = Not preferred
+    # 0 = Unavailable, 1 = Not preferred, 2 = Available
     # Outputs in format of (list of student names, [[[student 1 availibilities 8-9], [student 1 availabilies 9-10]], [[student 2 availabilities 8-9],[student 2 availabilities 9-10]])
     return student_names, student_table
 
@@ -73,6 +70,7 @@ if __name__ == '__main__':
     print(class_input('Class input.csv', 'FIT2014'))
     a, b = student_input('test student.csv')
     print(a)
+    print(b)
 
 
 
