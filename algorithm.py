@@ -1,40 +1,59 @@
-import input
-
+import input, lesson
 
 def algorithm(classes):
     number_of_students = len(classes[0][3]) + len(classes[0][4]) + len(classes[0][5])
     good_classes = []
     unavailable = []
     unavail_final = []
+
+    #good_classes_limit
+    if len(classes) <= 4:
+        good_classes_limit = 4
+    else:
+        good_classes_limit = max(len(classes)//2, 4)
+
+    # Looking at all classes that everyone can do and ranking based on how many don't not prefer it
+    ranking = []
+    potential_good_classes = []
     for i in range(len(classes)):
+        if len(classes[i][5]) > 0:
+            continue
+        else:
+            ranking_score = 0
+            ranking_score += len(classes[i][4])* 0.75
+            ranking_score += len(classes[i][5])
+            # ranking_score + 0.0(i)
+            potential_good_classes.append(ranking_score + i * 0.001)
 
-        # Situation 1 Irrespective of preferences
-        if len(classes[i][3]) == number_of_students:
-            good_classes.append(classes[i])
+    if len(potential_good_classes) <= good_classes_limit:
+        for i in range(len(potential_good_classes)):
+            good_classes.append(potential_good_classes[1])
+    else:
+        potential_good_classes.sort()
+        for i in range(good_classes_limit):
+            if potential_good_classes[i] > 10:
+                index = int(str(potential_good_classes[i])[5])
+            else:
+                index = int(str(potential_good_classes[i])[4])
+            good_classes.append(potential_good_classes[index])
 
-        # Situation 3 Only One student is available for a class
-        if len(classes[i][3]) == 1:
-            print("Cannot be done, not enough friends! :(")
+    if len(good_classes) >= good_classes_limit:
+        return good_classes
 
-        # Situation 4 Most preferred class
-        preferred_no = max(len(classes[i][3]))
-        for j in range(len(classes)):
-            if preferred_no == len(classes[i][3]):
-                good_classes.append(classes[i])
 
-        # Situation 5 If a student is unavailable for everything
-        if classes[i][5] is not None:
-            unavailable.extend(classes[i][5])
-        student = input.lesson1.names_list
-        for j in range(len(student)):
-            if unavailable.count(student[j]) == len(classes):
-                unavail_final.append(student[j])  # Students who can't do anything
+    # Situation 5 If a student is unavailable for everything
+    if classes[i][5] is not None:
+        unavailable.extend(classes[i][5])
+    student = input.lesson1.names_list
+    for j in range(len(student)):
+        if unavailable.count(student[j]) == len(classes):
+            unavail_final.append(student[j])  # Students who can't do anything
 
-        # Splitting groups
-        combos = [[]]
-        for item in student:
-            new_combos = [subset + [item] for subset in combos]
-            combos.extend(new_combos)
+    # Splitting groups
+    combos = [[]]
+    for item in student:
+        new_combos = [subset + [item] for subset in combos]
+        combos.extend(new_combos)
 
 
 

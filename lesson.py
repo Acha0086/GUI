@@ -34,7 +34,7 @@ class Lessons:
         for i in range(len(self.class_table)):
             if self.class_table[i][0][0] == 'L':
                 self.lecture_list_setup.append(self.class_table[i])
-    # TODO: Change tuple of time to normal list elements AT THE END 
+    # TODO: Change tuple of time to normal list elements AT THE END
     # [class_type/name/number, day, times, [available students], [unavailable students], [students who don’t prefer it]]
     def workshop(self):
         for i in range(len(self.workshop_list_setup)):
