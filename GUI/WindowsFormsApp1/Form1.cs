@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
                 all_buttons[i].BackColor = Color.White;
             }
 
-            var lines = File.ReadLines(@"A:\Documents\DLCT\test2.csv");
+            var lines = File.ReadLines(@"A:\Documents\DLCT\test1.csv");
             foreach (string line in lines)
             {
                 var sub_array = line.Split(',');

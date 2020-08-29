@@ -3,7 +3,7 @@ import string, algorithm, lesson
 
 def class_input(Units, Students):
     # finding the unit_code
-    file = open(str(Students), "r", encoding="UTF-8-sig")
+    file = open("A:/Documents/DLCT/" + str(Students), "r", encoding="UTF-8-sig")
     for line in file:
         line = line.split(',')
         Unit_name = line[1]
@@ -11,7 +11,7 @@ def class_input(Units, Students):
 
     # Input is csv file of units (see 'class input.csv' for example), and the name of the unit the student wants
     row_num = 0
-    file = open(str(Units), "r", encoding="UTF-8-sig")
+    file = open("A:/Documents/DLCT/" + str(Units), "r", encoding="UTF-8-sig")
     for line in file:
         line = line.split(',')
         if line[0] != str(Unit_name):
@@ -47,7 +47,7 @@ def student_input(Students):
     single_student_hour = []
     single_student_table = []
     student_names = []
-    file = open(str(Students), "r", encoding="UTF-8-sig")
+    file = open("A:/Documents/DLCT/" + str(Students), "r", encoding="UTF-8-sig")
 
     for line in file:
         line = line.split(',')
