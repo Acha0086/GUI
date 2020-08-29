@@ -41,8 +41,14 @@ def input(Students, Units, Unit_name):
     for line in file:
         line_num += 1
         line = line.split(',')
-        print(line)
         for word in line:
+            if word != '':
+                try:
+                    int(word)
+                except ValueError:
+                    # run new function
+
+
             if word == '':
                 student_table[line_num].append(None)
             else:
