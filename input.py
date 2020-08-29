@@ -82,7 +82,7 @@ if __name__ == '__main__':
     print(lesson1.tutorial_list_final)
     print('lecture final')
     print(lesson1.lecture_list_final)
-
+    lesson1.output('output_file.csv')
 
 
 
