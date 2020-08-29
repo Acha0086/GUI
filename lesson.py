@@ -148,9 +148,71 @@ class Lessons:
                     self.lecture_list_final[index][4].append(self.names_list[i])
                 else:
                     self.lecture_list_final[index][3].append(self.names_list[i])
+    
 
-        
 
+
+    def output(self, output_file_name):
+        file = open(output_file_name, "w")
+
+        for i in range(len(self.workshop_list_final)):
+            class_name_and_instance = re.findall(r'([A-Z][0-9]?)[ ]*([0-9])?', self.workshop_list_final[i][0])
+            class_name = class_name_and_instance[0][0]
+            output_str = class_name + ',' + self.workshop_list_final[i][1] + ',' + self.workshop_list_final[i][2][0] + ',' + self.workshop_list_final[i][2][1]
+            for j in range(len(self.workshop_list_final[i][3])):
+                output_str = output_str + ',' + self.workshop_list_final[i][3][j]
+            output_str = output_str + ',' + '~'
+
+            for j in range(len(self.workshop_list_final[i][4])):
+                output_str = output_str + ',' + self.workshop_list_final[i][4][j]
+            output_str = output_str + ',' + '~'
+            
+            for j in range(len(self.workshop_list_final[i][5])):
+                output_str = output_str + ',' + self.workshop_list_final[i][5][j]
+            
+
+            output_str += '\n'
+            file.write(output_str)
+
+        for i in range(len(self.tutorial_list_final)):
+            class_name_and_instance = re.findall(r'([A-Z][0-9]?)[ ]*([0-9])?', self.tutorial_list_final[i][0])
+            class_name = class_name_and_instance[0][0]
+            output_str = class_name + ',' + self.tutorial_list_final[i][1] + ',' + self.tutorial_list_final[i][2][0] + ',' + self.tutorial_list_final[i][2][1]
+            for j in range(len(self.tutorial_list_final[i][3])):
+                output_str = output_str + ',' + self.tutorial_list_final[i][3][j]
+            output_str = output_str + ',' + '~'
+
+            for j in range(len(self.tutorial_list_final[i][4])):
+                output_str = output_str + ',' + self.tutorial_list_final[i][4][j]
+            output_str = output_str + ',' + '~'
+
+            for j in range(len(self.tutorial_list_final[i][5])):
+                output_str = output_str + ',' + self.tutorial_list_final[i][5][j]
+           
+
+            output_str += '\n'
+            file.write(output_str)
+
+        for i in range(len(self.lecture_list_final)):
+            class_name_and_instance = re.findall(r'([A-Z][0-9]?)[ ]*([0-9])?', self.lecture_list_final[i][0])
+            class_name = class_name_and_instance[0][0]
+            output_str = class_name + ',' + self.lecture_list_final[i][1] + ',' + self.lecture_list_final[i][2][0] + ',' + self.lecture_list_final[i][2][1]
+            for j in range(len(self.lecture_list_final[i][3])):
+                output_str = output_str + ',' + self.lecture_list_final[i][3][j]
+            output_str = output_str + ',' + '~'
+
+            for j in range(len(self.lecture_list_final[i][4])):
+                output_str = output_str + ',' + self.lecture_list_final[i][4][j]
+            output_str = output_str + ',' + '~'
+
+            for j in range(len(self.lecture_list_final[i][5])):
+                output_str = output_str + ',' + self.lecture_list_final[i][5][j]
+            
+
+            output_str += '\n'
+            file.write(output_str)
+
+        file.close()
 
 
 
