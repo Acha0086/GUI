@@ -74,12 +74,15 @@ def student_input(Students):
 
 
 if __name__ == '__main__':
-    class_table = class_input('Class input.csv', 'test student.csv')
-    student_table = student_input('test student.csv')
+    class_table = class_input('Classinput.csv', 'teststudent.csv')
+    student_table = student_input('teststudent.csv')
     lesson1 = lesson.Lessons(class_table, student_table)
     lesson1.set_up()
     lesson1.main_run()
     lesson1.output('test1.csv')
+    print(lesson1.lecture_list_final)
+    print(lesson1.workshop_list_final)
+    print(lesson1.tutorial_list_final)
 
 
 
