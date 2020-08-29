@@ -1,11 +1,13 @@
 import input, re
 
 
-class Lessons:
+Lessons:
+
 
     def __init__(self, class_table, student_table):
         self.class_table = class_table
         self.number_of_students = len(student_table[0])
+        # all workshops etc. in one list
         self.workshop_list_setup = []
         self.tutorial_list_setup = []
         self.lecture_list_setup = []
@@ -69,7 +71,7 @@ class Lessons:
         for i in range(number_of_rows):
             rows.append(int(start_time) - 8 + i)
         for i in range(len(self.input_availability)):
-
+            pass
 
 
 
