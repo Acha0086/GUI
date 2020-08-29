@@ -15,7 +15,7 @@ def getprime(input):
         product = 1
         for i in range(nrow):
             for j in range(ncolumn):
-                if int(available[i][j]) == 0:
+                if available[i][j] == 0:
                     product *= primes[j*nrow+i]
         available_lst.append(product)
     return available_lst
@@ -28,5 +28,5 @@ def gettimerough(input):
             goodtimes.append(primes[i])
     return goodtimes
 
-
+print(student_input('test student.csv'))
 print(getprime(student_input('test student.csv')))
