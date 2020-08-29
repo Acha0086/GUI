@@ -1,6 +1,5 @@
-W1,Tue,13,14,Sue,~,John,~,Bob,Joe
-T,Fri,16,17,Sue,~,Bob,John,~,Joe
-T,Tue,16,17,Sue,~,Bob,John,~,Joe
-T,Mon,12,13,Bob,Joe,~,John,~,Sue
-L1,Wed,8,9,Sue,~,Joe,~,Bob,John
-L2,Thu,19,20,Sue,~,~,Bob,Joe,John
+W1,Fri,17,18,Joe,Sue,~,Bob,John,~
+W1,Mon,11,13,Bob,~,Joe,John,~,Sue
+W1,Wed,10,12,Sue,~,Joe,~,Bob,John
+L1,Mon,9,10,Bob,~,Joe,~,Sue,John
+L2,Tue,10,11,Sue,~,Joe,~,Bob,John

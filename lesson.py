@@ -204,7 +204,7 @@ class Lessons:
                     index = int(str(potential_good_classes[i])[4]) - 1
                 good_classes.append(classes[index])
 
-        if len(good_classes) >= good_classes_limit:
+        if len(good_classes) >= good_classes_limit or len(good_classes) == len(classes):
             return good_classes
 
         # not everyone is in the class
@@ -236,12 +236,48 @@ class Lessons:
                 good_classes.append(classes[index])
         if lesson_type == "T":
             self.tutorial_list_final= good_classes
+            i = 0
+            while i < len(self.tutorial_list_final):
+                j = 0
+                while j < len(self.tutorial_list_final):
+                    if i != j:
+                        if self.tutorial_list_final[i][2] == self.tutorial_list_final[j][2]:
+                            if i > j:
+                                del self.workshop_list_final[i]
+                            else:
+                                del self.workshop_list_final[j]
+                    j += 1
+                i += 1
 
         if lesson_type == "W":
             self.workshop_list_final = good_classes
+            i = 0
+            while i < len(self.workshop_list_final):
+                j = 0
+                while j < len(self.workshop_list_final):
+                    if i != j:
+                        if self.workshop_list_final[i][2] == self.workshop_list_final[j][2]:
+                            if i > j:
+                                del self.workshop_list_final[i]
+                            else:
+                                del self.workshop_list_final[j]
+                    j += 1
+                i += 1
 
         if lesson_type == "L":
             self.lecture_list_final = good_classes
+            i = 0
+            while i < len(self.lecture_list_final):
+                j = 0
+                while j < len(self.lecture_list_final):
+                    if i != j:
+                        if self.lecture_list_final[i][2] == self.lecture_list_final[j][2]:
+                            if i > j:
+                                del self.workshop_list_final[i]
+                            else:
+                                del self.workshop_list_final[j]
+                    j += 1
+                i += 1
 
 
     def output(self, output_file_name):
