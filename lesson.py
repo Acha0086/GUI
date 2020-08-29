@@ -1,13 +1,11 @@
 import input, re
 
 
-Lessons:
-
+class Lessons:
 
     def __init__(self, class_table, student_table):
         self.class_table = class_table
         self.number_of_students = len(student_table[0])
-        # all workshops etc. in one list
         self.workshop_list_setup = []
         self.tutorial_list_setup = []
         self.lecture_list_setup = []
@@ -45,6 +43,9 @@ Lessons:
             single_w.append(self.workshop_list_setup[i][1])
             time = re.findall(r'([0-9][0-9]?)[ ]*([0-9][0-9]?)', self.workshop_list_setup[i][2])
             single_w.append(time[0])
+            single_w.append([])
+            single_w.append([])
+            single_w.append([])
             self.workshop_list_final.append(single_w)
 
     def availability(self, day, time):
@@ -70,8 +71,17 @@ Lessons:
         number_of_rows = int(end_time) - int(start_time)
         for i in range(number_of_rows):
             rows.append(int(start_time) - 8 + i)
+        row = int(start_time)-8
         for i in range(len(self.input_availability)):
-            pass
+            name = self.names_list[i]
+            if self.input_availability[i][row][column] == 0:
+                self.workshop_list_final[i].append(name)
+                print(name)
+            elif self.input_availability[i][row][column] == 1:
+                self.workshop_list_final[i].append(name)
+            else:
+                self.workshop_list_final[i].append(name)
+        
 
 
 
