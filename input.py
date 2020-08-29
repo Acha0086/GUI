@@ -74,9 +74,15 @@ if __name__ == '__main__':
     lesson1 = lesson.Lessons(class_table, student_table)
     lesson1.set_up()
     lesson1.workshop()
+    lesson1.tutorial()
+    lesson1.lecture()
+    print('workshop final')
     print(lesson1.workshop_list_final)
-    lesson1.availability('Tue', '13  14')
-    print(lesson1.workshop_list_final)
+    print('tutorial final')
+    print(lesson1.tutorial_list_final)
+    print('lecture final')
+    print(lesson1.lecture_list_final)
+
 
 
 
